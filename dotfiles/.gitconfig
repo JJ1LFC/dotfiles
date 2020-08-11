@@ -1,0 +1,10 @@
+[user]
+	name = JJ1LFC
+	email = alt@sfc.wide.ad.jp
+	signingkey = 48dd28c2039e3ce2632c6cca7871c05e7d8ec204
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+[credential]
+	helper = cache
+[commit]
+	gpgsign = true
