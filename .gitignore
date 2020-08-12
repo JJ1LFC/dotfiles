@@ -10,8 +10,7 @@
 /dotfiles/.config/**
 !/dotfiles/.config/fish/
 /dotfiles/.config/fish/**
-!/dotfiles/.config/fish/fish_variables
-!/dotfiles/.config/fish/functions
+!/dotfiles/.config/fish/config.fish
 !/dotfiles/.ssh/
 /dotfiles/.ssh/**
 !/dotfiles/.ssh/authorized_keys

@@ -1,25 +1,37 @@
+set -U fish_color_normal normal
+set -U fish_color_command 87d7ff
+set -U fish_color_error ff0000
+set -U fish_color_end 009900
+set -U fish_color_redirection 00afff
+set -U fish_color_quote 999900
+set -U fish_color_param 00afff
+set -U fish_color_selection c0c0c0
+set -U fish_color_search_match ffff00
+set -U fish_color_history_current normal
+set -U fish_color_operator 00a6b2
+set -U fish_color_cwd 008000
+set -U fish_color_cwd_root 800000
+set -U fish_color_comment 990000
+set -U fish_color_valid_path normal
+set -U fish_color_autosuggestion 555
+set -U fish_color_user 00ff00
+set -U fish_color_host normal
+set -U fish_pager_color_completion normal
+set -U fish_pager_color_description B3A06D yellow
+set -U fish_pager_color_prefix white --bold --underline
+set -U fish_pager_color_progress brwhite --background=cyan
+set -U fish_color_cancel normal
+set -U fish_color_escape 00a6b2
+set -U fish_color_match normal
+
+set __fish_git_prompt_showdirtystate 'yes'
+set __fish_git_prompt_showstashstate 'yes'
+set __fish_git_prompt_showupstream 'yes'
+set __fish_git_prompt_showuntrackedfiles 'yes'
+set __fish_git_prompt_show_informative_status 'yes'
+set __fish_git_prompt_showcolorhints 'yes'
+
 function fish_prompt
-    # This prompt shows:
-    # - green lines if the last return command is OK, red otherwise
-    # - your user name, in red if root or yellow otherwise
-    # - your hostname, in cyan if ssh or blue otherwise
-    # - the current path (with prompt_pwd)
-    # - date +%X
-    # - the current virtual environment, if any
-    # - the current git status, if any, with fish_git_prompt
-    # - the current battery state, if any, and if your power cable is unplugged, and if you have "acpi"
-    # - current background jobs, if any
-
-    # It goes from:
-    # ┬─[nim@Hattori:~]─[11:39:00]
-    # ╰─>$ echo here
-
-    # To:
-    # ┬─[nim@Hattori:~/w/dashboard]─[11:37:14]─[V:django20]─[G:master↑1|●1✚1…1]─[B:85%, 05:41:42 remaining]
-    # │ 2	15054	0%	arrêtée	sleep 100000
-    # │ 1	15048	0%	arrêtée	sleep 100000
-    # ╰─>$ echo there
-
     set -l retc red
     test $status = 0; and set retc green
 
@@ -78,7 +90,7 @@ function fish_prompt
     and _nim_prompt_wrapper $retc V (basename "$VIRTUAL_ENV")
 
     # git
-    set prompt_git (fish_git_prompt | string trim -c ' ()')
+    set prompt_git (__fish_git_prompt | string trim -c ' ()')
     test -n "$prompt_git"
     and _nim_prompt_wrapper $retc G $prompt_git
 
@@ -104,4 +116,10 @@ function fish_prompt
     set_color -o red
     echo -n '$ '
     set_color normal
+end
+
+functions --copy cd standard_cd
+
+function cd
+  standard_cd $argv; and la
 end
