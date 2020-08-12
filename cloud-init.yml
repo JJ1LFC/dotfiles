@@ -1,0 +1,30 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+packages:
+  - zsh
+  - curl
+  - git
+  - vim
+  - neofetch
+
+timezone: Asia/Tokyo
+locale: C.UTF-8
+
+users:
+  - name: alt
+    groups: sudo
+    sudo: [ALL=(ALL) NOPASSWD:ALL]
+    ssh_authorized_keys:
+    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILqrtitB1UkoNBh4L6gNHuW9sOrt7L1FysszPogYcWKS alt@sfc.wide.ad.jp
+    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMPiTnxQJ3IUYy8bboBNIb9bEriP8X1lHw6B+VNIqWZd alt@p20
+    shell: /usr/bin/zsh
+
+runcmd:
+  - sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
+  - sed -i 's|[#]*PasswordAuthentication yes|PasswordAuthentication no|g' /etc/ssh/sshd_config
+  - systemctl restart sshd
+  - "git clone https://github.com/JJ1LFC/dotfiles.git /home/alt/dotfiles"
+  - sh /home/alt/dotfiles/install.sh
+
+final_message: "cloud-init completed."
