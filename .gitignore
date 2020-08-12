@@ -1,8 +1,6 @@
 /*
 /.**
 
-!/cloud-init.yml
-
 !/dotfiles/
 /dotfiles/**
 !/dotfiles/.gitconfig
@@ -22,3 +20,4 @@
 !/LICENSE
 !/.gitignore
 !/install.sh
+!/startup.sh
