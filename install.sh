@@ -1,10 +1,10 @@
-#!/bin/bash
-
-### RUN CLOUD-INIT FIRST!! ###
+#!/bin/sh
 
 set -eu
 
-find /home/alt/dotfiles/dotfiles -type d | xargs -I '{}' mkdir -p "/home/alt/{}"
-find /home/alt/dotfiles/dotfiles -type f | xargs -I '{}' ln -snfv "/home/alt/dotfiles/dotfiles{}" "/home/alt/{}"
+cd /home/alt/dotfiles/dotfiles
+
+find . -type d | xargs -I '{}' mkdir -p "/home/alt/{}"
+find . -type f | xargs -I '{}' ln -snfv "/home/alt/dotfiles/dotfiles/{}" "/home/alt/{}"
 
 echo "Dotfiles install success"
