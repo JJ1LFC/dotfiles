@@ -15,3 +15,5 @@ sed -i 's|[#]*PasswordAuthentication yes|PasswordAuthentication no|g' /etc/ssh/s
 systemctl restart sshd
 sudo -u alt git clone https://github.com/JJ1LFC/dotfiles.git /home/alt/dotfiles
 sudo -u alt sh /home/alt/dotfiles/install.sh
+chsh -s $(which zsh) alt
+sudo -u alt neofetch --title_fqdn on --shell_path on --memory_percent on
