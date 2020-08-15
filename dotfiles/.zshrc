@@ -42,7 +42,7 @@ setopt extended_glob
 
 # others
 setopt auto_cd
-function chpwd() { la }
+function chpwd() { ls -la }
 bindkey -v
 setopt extended_glob
 autoload -Uz colors
