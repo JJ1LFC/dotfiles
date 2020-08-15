@@ -47,8 +47,8 @@ bindkey -v
 setopt extended_glob
 autoload -Uz colors
 colors
-PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})┬─${fg[green]}[${fg[yellow]}%n${reset_color}@${fg[blue]}%M${reset_color}:%~${fg[green]}]%(?.%{${fg[green]}%}.%{${fg[red]}%})─[%*]
-╰─>${reset_color}%# "
+PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})┬─%{${fg[green]}%}%{${fg[yellow]}%}%n%{${reset_color}%}@%{${fg[blue]}%}%M%{${reset_color}%}:%~%{${fg[green]}%}%(?.%{${fg[green]}%}.%{${fg[red]}%})─[%*]
+╰─>%{${reset_color}%}%# "
 
 # alias
 alias la='ls -la'
