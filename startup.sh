@@ -25,7 +25,7 @@ fi
 sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
 sed -i 's|[#]*PasswordAuthentication yes|PasswordAuthentication no|g' /etc/ssh/sshd_config
 systemctl restart sshd
-sudo -u alt git clone https://github.com/JJ1LFC/dotfiles.git /home/alt/dotfiles
-sudo -u alt sh /home/alt/dotfiles/install.sh
+su -c "git clone https://github.com/JJ1LFC/dotfiles.git /home/alt/dotfiles" - alt
+su -c "sh /home/alt/dotfiles/install.sh" - alt
 chsh -s $(which zsh) alt
-sudo -u alt neofetch --title_fqdn on --shell_path on --memory_percent on
+su -c "neofetch --title_fqdn on --shell_path on --memory_percent on" - alt
