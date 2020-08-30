@@ -6,5 +6,7 @@
 	editor = vim -c \"set fenc=utf-8\"
 [credential]
 	helper = cache
+[gpg]
+    program = gpg
 [commit]
 	gpgsign = true

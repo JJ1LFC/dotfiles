@@ -14,6 +14,11 @@
 !/dotfiles/.ssh/
 /dotfiles/.ssh/**
 !/dotfiles/.ssh/authorized_keys
+!/dotfiles/.gnupg/
+/dotfiles/.gnupg/**
+!/dotfiles/.gnupg/gpg-agent.conf
+!/dotfiles/.gnupg/sshcontrol
+!/dotfiles/.gnupg/gpg.conf
 
 !/README.md
 !/LICENSE

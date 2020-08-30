@@ -11,7 +11,7 @@ echo "                                    |__/ |__/"
 
 apt update
 apt full-upgrade -y
-apt install zsh curl git vim neofetch -y
+apt install zsh curl git vim neofetch gnupg gpg-agent pinentry-curses -y
 timedatectl set-timezone Asia/Tokyo
 if [ -z $(getent passwd alt) ]; then
     echo "##########
