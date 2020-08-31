@@ -50,12 +50,11 @@ bindkey -v
 setopt extended_glob
 autoload -Uz colors
 colors
-PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})┬─%{${fg[green]}%}[%{${fg[yellow]}%}%n%{${reset_color}%}@%{${fg[blue]}%}%M%{${reset_color}%}:%~%{${fg[green]}%}]%(?.%{${fg[green]}%}.%{${fg[red]}%})─[%*]
-╰─>%{${reset_color}%}%# "
 
 # alias
 alias la='ls -la'
 
+# gpg-agent
 if (( ${+commands[gpg]} )); then
     # Start the gpg-agent if not already running
     if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
@@ -71,3 +70,6 @@ if (( ${+commands[gpg]} )); then
     # Refresh gpg-agent tty in case user switches into an X session
     gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
+
+# starship
+eval "$(starship init zsh)"

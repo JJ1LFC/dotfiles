@@ -8,6 +8,7 @@
 !/dotfiles/.zshrc
 !/dotfiles/.config/
 /dotfiles/.config/**
+!/dotfiles/.config/starship.toml
 !/dotfiles/.config/fish/
 /dotfiles/.config/fish/**
 !/dotfiles/.config/fish/config.fish

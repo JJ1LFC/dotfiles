@@ -1,0 +1,17 @@
+[character]
+use_symbol_for_status = true
+
+[hostname]
+ssh_only = false
+trim_at = ""
+
+[username]
+show_always = true
+
+[time]
+disabled = false
+
+[memory_usage]
+disabled = false
+show_percentage = true
+threshold = 50
