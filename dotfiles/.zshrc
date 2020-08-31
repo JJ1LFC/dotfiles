@@ -11,6 +11,7 @@ zplug "peterhurford/git-aliases.zsh"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
+zplug "zsh-users/zsh-history-substring-search"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -23,6 +24,7 @@ zplug load –verbose
 
 
 # auto complete
+source ~/.zplug/repos/zsh-users/zsh-history-substring-search/zsh-history-substring-search.zsh
 autoload -Uz compinit && compinit
 setopt auto_list
 setopt auto_menu
@@ -46,13 +48,15 @@ setopt extended_glob
 # others
 setopt auto_cd
 function chpwd() { ls -la }
-bindkey -v
 setopt extended_glob
 autoload -Uz colors
 colors
 
-# alias
+# alias&keybind
 alias la='ls -la'
+bindkey -v
+bindkey "${terminfo[kcuu1]}" history-substring-search-up
+bindkey "${terminfo[kcud1]}" history-substring-search-down
 
 # gpg-agent
 if (( ${+commands[gpg]} )); then
