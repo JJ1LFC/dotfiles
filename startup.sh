@@ -11,7 +11,7 @@ echo "                                    |__/ |__/"
 
 apt update
 apt full-upgrade -y
-apt install zsh curl git vim neofetch gnupg gpg-agent pinentry-curses -y
+apt install zsh curl git vim neofetch gnupg gpg-agent pinentry-curses tmux -y
 curl -fsSL https://starship.rs/install.sh | bash
 timedatectl set-timezone Asia/Tokyo
 if [ -z $(getent passwd alt) ]; then
@@ -29,4 +29,5 @@ systemctl restart sshd
 su -c "git clone https://github.com/JJ1LFC/dotfiles.git /home/alt/dotfiles" - alt
 su -c "sh /home/alt/dotfiles/install.sh" - alt
 chsh -s $(which zsh) alt
+su -c "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" - alt
 su -c "neofetch --title_fqdn on --shell_path on --memory_percent on" - alt

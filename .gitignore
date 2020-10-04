@@ -4,6 +4,7 @@
 !/dotfiles/
 /dotfiles/**
 !/dotfiles/.gitconfig
+!/dotfiles/.tmux.conf
 !/dotfiles/.vimrc
 !/dotfiles/.zshrc
 !/dotfiles/.config/
