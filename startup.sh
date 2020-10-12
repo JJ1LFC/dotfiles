@@ -19,7 +19,7 @@ if [ -z $(getent passwd alt) ]; then
     ## adding user 'alt'
     ##########"
     useradd alt -m -p '' -s /usr/bin/zsh
-    passwd --expire alt
+    #passwd --expire alt
     gpasswd -a alt sudo
     chown alt:alt /home/alt/
 fi
