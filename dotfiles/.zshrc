@@ -54,6 +54,7 @@ colors
 
 # alias&keybind
 alias la='ls -la'
+alias emacs='vim'
 bindkey -v
 bindkey "${terminfo[kcuu1]}" history-substring-search-up
 bindkey "${terminfo[kcud1]}" history-substring-search-down
