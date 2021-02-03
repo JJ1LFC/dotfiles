@@ -56,6 +56,8 @@ colors
 alias la='ls -la'
 alias emacs='vim'
 bindkey -v
+bindkey '^A' vi-beginning-of-line
+bindkey '^E' vi-end-of-line
 bindkey "${terminfo[kcuu1]}" history-substring-search-up
 bindkey "${terminfo[kcud1]}" history-substring-search-down
 
