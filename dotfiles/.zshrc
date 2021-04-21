@@ -55,6 +55,7 @@ colors
 # alias&keybind
 alias la='ls -la'
 alias emacs='vim'
+alias drill='drill -o rd'
 bindkey -v
 bindkey '^A' vi-beginning-of-line
 bindkey '^E' vi-end-of-line
