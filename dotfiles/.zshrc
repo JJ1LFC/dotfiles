@@ -41,6 +41,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
 setopt hist_ignore_dups
+setopt hist_ignore_space
 setopt share_history
 setopt extended_glob
 
