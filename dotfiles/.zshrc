@@ -55,6 +55,7 @@ colors
 
 # alias&keybind
 alias la='ls -la'
+alias mkdir='(){mkdir $1;cd $1}'
 alias emacs='vim'
 alias drill='drill -o rd'
 bindkey -v
