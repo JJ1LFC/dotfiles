@@ -1,6 +1,6 @@
 [user]
   name = JJ1LFC
-  email = alt@sfc.wide.ad.jp
+  email = alt@jj1lfc.dev
   signingkey = 181CBC334DD956AD1945402E186AF88265665FBC
 [core]
   editor = vim -c \"set fenc=utf-8\"
