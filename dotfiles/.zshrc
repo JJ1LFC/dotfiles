@@ -1,30 +1,16 @@
-# zplug
-if [[ ! -d ~/.zplug ]];then
-  git clone https://github.com/zplug/zplug ~/.zplug
-fi
+# zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
-source ~/.zplug/init.zsh
-
-zplug "zsh-users/zsh-completions"
-zplug "plugins/git",   from:oh-my-zsh
-zplug "peterhurford/git-aliases.zsh"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zplug/zplug", hook-build:'zplug --self-manage'
-zplug "zsh-users/zsh-history-substring-search"
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load –verbose
-
+zinit load zsh-users/zsh-completions
+zinit load zsh-users/zsh-autosuggestions
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit load zsh-users/zsh-history-substring-search
+zinit ice wait atload'_history_substring_search_config'
 
 # auto complete
-source ~/.zplug/repos/zsh-users/zsh-history-substring-search/zsh-history-substring-search.zsh
 autoload -Uz compinit && compinit
 setopt auto_list
 setopt auto_menu
@@ -83,3 +69,8 @@ fi
 
 # starship
 eval "$(starship init zsh)"
+
+# external source
+zinit load zsh-users/zsh-syntax-highlighting
+source zsh-history-substring-search.zsh
+
