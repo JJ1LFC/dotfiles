@@ -20,6 +20,5 @@ systemctl restart sshd
 su -c "git clone https://github.com/JJ1LFC/dotfiles.git /home/alt/dotfiles" - alt
 su -c "sh /home/alt/dotfiles/install.sh" - alt
 chsh -s $(which zsh) alt
-su -c "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" - alt
 su -c "gpg --recv-keys 1F3735FF4190675B1088A69A128866201FD50FEE" - alt
 
