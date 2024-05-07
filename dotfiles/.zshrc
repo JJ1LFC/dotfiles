@@ -8,7 +8,7 @@ zinit load zsh-users/zsh-completions
 zinit load zsh-users/zsh-autosuggestions
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit load zsh-users/zsh-history-substring-search
-zinit ice wait atload'_history_substring_search_config'
+zinit ice wait atload '_history_substring_search_config'
 
 # auto complete
 autoload -Uz compinit && compinit
@@ -72,5 +72,5 @@ eval "$(starship init zsh)"
 
 # external source
 zinit load zsh-users/zsh-syntax-highlighting
-source zsh-history-substring-search.zsh
+source ~/.local/share/zinit/plugins/zsh-users---zsh-history-substring-search/zsh-history-substring-search.zsh
 
