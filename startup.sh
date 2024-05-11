@@ -2,7 +2,7 @@
 
 apt update
 apt full-upgrade -y
-apt install zsh curl git vim gnupg gpg-agent scdaemon pinentry-curses tmux ibus-mozc -y
+apt install zsh curl git vim gnupg gpg-agent scdaemon pinentry-curses tmux ibus-mozc xclip vim-gtk3 -y
 curl -sS https://starship.rs/install.sh | sh
 timedatectl set-timezone Asia/Tokyo
 if [ -z $(getent passwd alt) ]; then
