@@ -37,9 +37,6 @@ cmd_indicator = 'cmd'
 [sudo]
 disabled = false
 
-[time]
-disabled = false
-
 [username]
 show_always = true
 
